@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>New Tab</title>
+  <style>
+    :root {
+      --color-primary: #212121;
+      --color-secondary: #9E9E9E;
+      --color-accent: #F44336;
+      --color-background: #FFF;
+    }
+
+    * {
+      transform-origin: inherit;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      background-color: var(--color-background);
+    }
+
+    .clock {
+      width: 60vmin;
+      height: 60vmin;
+      color: var(--color-primary);
+      fill: currentColor;
+      transform-origin: 50px 50px;
+    }
+
+    .clock line {
+      stroke: currentColor;
+      stroke-linecap: round;
+    }
+
+    .marks {
+      color: var(--color-secondary);
+      stroke-width: 0.5px;
+    }
+
+    .mark-1 { transform: rotate(30deg); }
+    .mark-2 { transform: rotate(60deg); }
+    .mark-3 { transform: rotate(90deg); }
+    .mark-4 { transform: rotate(120deg); }
+    .mark-5 { transform: rotate(150deg); }
+    .mark-6 { transform: rotate(180deg); }
+    .mark-7 { transform: rotate(210deg); }
+    .mark-8 { transform: rotate(240deg); }
+    .mark-9 { transform: rotate(270deg); }
+    .mark-10 { transform: rotate(300deg); }
+    .mark-11 { transform: rotate(330deg); }
+    .mark-12 { transform: rotate(360deg); }
+
+    .date {
+      font-size: 0.5rem;
+      text-anchor: end;
+      alignment-baseline: middle;
+      color: var(--color-primary);
+    }
+
+    .hand {
+      stroke-width: 1.5px;
+      transition: transform 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .hand-second {
+      color: var(--color-accent);
+      stroke-width: 1px;
+    }
+  </style>
+
+</head>
+<body class="theme-dark">
+  <svg class="clock" viewBox="0 0 100 100">
+    <g class="marks">
+      <line class="mark mark-1" x1="50" y1="5" x2="50" y2="10"></line>
+      <line class="mark mark-2" x1="50" y1="5" x2="50" y2="10"></line>
+      <line class="mark mark-3" x1="50" y1="5" x2="50" y2="10"></line>
+      <line class="mark mark-4" x1="50" y1="5" x2="50" y2="10"></line>
+      <line class="mark mark-5" x1="50" y1="5" x2="50" y2="10"></line>
+      <line class="mark mark-6" x1="50" y1="5" x2="50" y2="10"></line>
+      <line class="mark mark-7" x1="50" y1="5" x2="50" y2="10"></line>
+      <line class="mark mark-8" x1="50" y1="5" x2="50" y2="10"></line>
+      <line class="mark mark-9" x1="50" y1="5" x2="50" y2="10"></line>
+      <line class="mark mark-10" x1="50" y1="5" x2="50" y2="10"></line>
+      <line class="mark mark-11" x1="50" y1="5" x2="50" y2="10"></line>
+      <line class="mark mark-12" x1="50" y1="5" x2="50" y2="10"></line>
+    </g>
+    <text class="date" x="80" y="50"></text>
+    <line class="hand hand-hour" x1="50" y1="25" x2="50" y2="50"></line>
+    <line class="hand hand-minute" x1="50" y1="10" x2="50" y2="50"></line>
+    <circle cx="50" cy="50" r="3"></circle>
+    <g class="hand hand-second">
+      <line x1="50" y1="10" x2="50" y2="60"></line>
+      <circle cx="50" cy="50" r="1.5"></circle>
+    </g>
+  </svg>
+
+  <script>
+    (() => {
+      const secondHand = document.querySelector('.hand-second');
+      const minuteHand = document.querySelector('.hand-minute');
+      const hourHand = document.querySelector('.hand-hour');
+      const dateText = document.querySelector('.date');
+
+      let rotations = [0, 0, 0]; // [seconds, minutes, hours]
+
+      function setTime() {
+        const now = new Date();
+
+        const seconds = now.getSeconds();
+        const minutes = now.getMinutes();
+        const hours = now.getHours() % 12;
+        const date = now.getDate();
+
+        if (seconds === 0) {
+          rotations[0]++;
+        }
+
+        if (minutes === 0 && seconds === 0) {
+          rotations[1]++;
+        }
+
+        if (hours === 0 && minutes === 0 && seconds === 0) {
+          rotations[2]++;
+        }
+
+        const secondsDeg = (seconds / 60 * 360) + (rotations[0] * 360);
+        const minutesDeg = (minutes / 60 * 360) + (rotations[1] * 360);
+        const hoursDeg = (hours / 12 * 360) + (minutes / 60 * 30) + (rotations[2] * 360);
+
+        secondHand.style.transform = `rotate(${secondsDeg}deg)`;
+        minuteHand.style.transform = `rotate(${minutesDeg}deg)`;
+        hourHand.style.transform = `rotate(${hoursDeg}deg)`;
+        dateText.innerHTML = date;
+      }
+
+      setTime();
+      setInterval(setTime, 1000);
+    })();
+  </script>
+</body>
+</html>
