@@ -1,7 +1,7 @@
 :root {
-  --color-primary: #212121;
-  --color-secondary: #9E9E9E;
-  --color-accent: #F44336;
+  --color-primary: #000;
+  --color-secondary: rgba(0, 0, 0, 0.25);
+  --color-accent: #FF3B30;
   --color-background: #FFF;
 }
 
@@ -59,10 +59,10 @@ body {
 .mark-12 { transform: rotate(360deg); }
 
 .date {
-  font-size: 0.5rem;
+  font-size: 0.625rem;
   text-anchor: end;
   alignment-baseline: middle;
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .hand {
