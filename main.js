@@ -3,7 +3,6 @@
   const minuteHand = document.querySelector('.hand-minute');
   const hourHand = document.querySelector('.hand-hour');
   const dateText = document.querySelector('.date');
-  const dateFull = document.querySelector('.date-full');
 
   let rotations = [0, 0, 0]; // [seconds, minutes, hours]
 
