@@ -2,7 +2,6 @@
   const secondHand = document.querySelector('.hand-second');
   const minuteHand = document.querySelector('.hand-minute');
   const hourHand = document.querySelector('.hand-hour');
-  const dateText = document.querySelector('.date');
 
   let rotations = [0, 0, 0]; // [seconds, minutes, hours]
 
@@ -12,7 +11,6 @@
     const seconds = now.getSeconds();
     const minutes = now.getMinutes();
     const hours = now.getHours() % 12;
-    const date = now.getDate();
 
     if (seconds === 0) {
       rotations[0]++;
@@ -33,7 +31,6 @@
     secondHand.style.transform = `rotate(${secondsDeg}deg)`;
     minuteHand.style.transform = `rotate(${minutesDeg}deg)`;
     hourHand.style.transform = `rotate(${hoursDeg}deg)`;
-    dateText.innerHTML = date;
   }
 
   setTime();
