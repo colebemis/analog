@@ -57,13 +57,6 @@ body {
 .mark-11 { transform: rotate(330deg); }
 .mark-12 { transform: rotate(360deg); }
 
-.date {
-  font-size: 0.625rem;
-  text-anchor: end;
-  alignment-baseline: central;
-  color: var(--color-accent);
-}
-
 .hand {
   stroke-width: 1.5px;
   transition: transform 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
