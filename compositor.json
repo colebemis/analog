@@ -7,44 +7,46 @@
   "title": "Analog",
   "branch": "",
   "style": {
-    "name": "Swiss",
+    "name": "Brutalist",
     "componentSet": {
       "nav": "nav/BasicNav",
-      "header": "header/SwissHeader",
-      "article": "article/SwissArticle",
+      "header": "header/BasicHeader",
+      "article": "article/MarkdownArticle",
       "footer": "footer/BasicFooter"
     },
-    "fontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
-    "heading": {
-      "fontWeight": 700,
-      "letterSpacing": "-0.01em"
-    },
+    "fontFamily": "Consolas, \"Liberation Mono\", Menlo, Courier, monospace",
+    "heading": {},
+    "typeScale": [
+      48,
+      32,
+      20,
+      18,
+      16,
+      14,
+      12
+    ],
     "layout": {
+      "maxWidth": 1024,
       "fluid": true
     },
     "colors": {
-      "text": "#000",
+      "text": "#333",
       "background": "#fff",
-      "primary": "#05a",
-      "secondary": "#444",
-      "highlight": "#f30",
-      "border": "#ccc",
-      "muted": "#eee"
+      "primary": "#666",
+      "secondary": "#888",
+      "highlight": "#1f80ff",
+      "muted": "#f6f6f6",
+      "border": "#eee"
     }
   },
   "content": [
     {
       "component": "nav",
-      "links": [
-        {
-          "href": "https://github.com/colebemis/analog",
-          "text": "GitHub"
-        }
-      ]
+      "links": []
     },
     {
       "component": "header",
-      "heading": "analog",
+      "heading": "Analog",
       "subhead": "Replace your new tab page with a minimal analog clock",
       "children": [
         {
@@ -57,14 +59,14 @@
           "user": "colebemis",
           "repo": "analog"
         }
-      ]
-    },
-    {
-      "component": "article",
-      "metadata": {
-        "source": "github.readme"
-      },
-      "html": "\n<h3>Replace your new tab page with a minimal analog clock</h3>\n<p>Available on the <a href=\"https://chrome.google.com/webstore/detail/analog-new-tab/kbefmcdolmelljmkgflbldffpgibmafm\">Chrome Web Store</a>.</p>\n<p><img src=\"analog-screenshot.png\"></p>\n"
+      ],
+      "links": [
+        {
+          "href": "https://chrome.google.com/webstore/detail/analog-new-tab/kbefmcdolmelljmkgflbldffpgibmafm",
+          "text": "Install Chrome Extension"
+        }
+      ],
+      "slug": ""
     },
     {
       "component": "footer",
@@ -77,7 +79,8 @@
           "href": "https://github.com/colebemis",
           "text": "colebemis"
         }
-      ]
+      ],
+      "heading": ""
     }
   ]
 }
