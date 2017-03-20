@@ -1,0 +1,83 @@
+{
+  "name": "colebemis/analog",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "Analog",
+  "branch": "",
+  "style": {
+    "name": "Swiss",
+    "componentSet": {
+      "nav": "nav/BasicNav",
+      "header": "header/SwissHeader",
+      "article": "article/SwissArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "heading": {
+      "fontWeight": 700,
+      "letterSpacing": "-0.01em"
+    },
+    "layout": {
+      "fluid": true
+    },
+    "colors": {
+      "text": "#000",
+      "background": "#fff",
+      "primary": "#05a",
+      "secondary": "#444",
+      "highlight": "#f30",
+      "border": "#ccc",
+      "muted": "#eee"
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "https://github.com/colebemis/analog",
+          "text": "GitHub"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "analog",
+      "subhead": "Replace your new tab page with a minimal analog clock",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "analog: Replace your new tab page with a minimal analog clock",
+          "url": ""
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "colebemis",
+          "repo": "analog"
+        }
+      ]
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "\n<h3>Replace your new tab page with a minimal analog clock</h3>\n<p>Available on the <a href=\"https://chrome.google.com/webstore/detail/analog-new-tab/kbefmcdolmelljmkgflbldffpgibmafm\">Chrome Web Store</a>.</p>\n<p><img src=\"analog-screenshot.png\"></p>\n"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/colebemis/analog",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://github.com/colebemis",
+          "text": "colebemis"
+        }
+      ]
+    }
+  ]
+}
