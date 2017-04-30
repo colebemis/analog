@@ -1,4 +1,4 @@
-(() => {
+((document) => {
   const secondHand = document.querySelector('.hand-second');
   const minuteHand = document.querySelector('.hand-minute');
   const hourHand = document.querySelector('.hand-hour');
@@ -35,4 +35,4 @@
 
   setTime();
   setInterval(setTime, 1000);
-})();
+})(document);
