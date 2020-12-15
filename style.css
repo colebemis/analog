@@ -4,6 +4,14 @@
   --color-background: #FFF;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #b5ddc7;
+    --color-accent: #f35c23;
+    --color-background: #123046;
+  }
+}
+
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
